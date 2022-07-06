@@ -1,0 +1,34 @@
+Usuario
+	id
+	nome
+	sobrenome
+	username
+	imagem
+	descrição
+	senha
+	email
+	telefone(opicional)
+	dataEntrada
+	dataAniversario
+	key
+
+Post
+	id
+	idUsuario
+	conteudo(até 10 fts)
+	descrição
+	dataPublicação
+
+Curtidas
+	id
+	idUsuario
+	idPost
+
+Comentario
+	id
+	idUser
+	idPost
+	conteudo
+	data
+
+Proj@100205-
