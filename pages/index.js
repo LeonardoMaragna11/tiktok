@@ -29,10 +29,13 @@ export default function Home() {
 
   return (
     <>
-      <h1>BEM VINDO AO LOGIN</h1>
+      <nav>
+        <h1>BEM VINDO AO LOGIN</h1>
+      </nav>
+      
       <form>
-        <input type={'email'} onChange={(event)=>{ setEmail(event.target.value) }}/>
-        <input type={'password'} onChange={(event)=>{ setSenha(event.target.value) }}/>
+        <input type={'email'} onChange={(event)=>{ setEmail(event.target.value) }} placeholder="Email" />
+        <input type={'password'} onChange={(event)=>{ setSenha(event.target.value) }} placeholder="Senha" />
         <input type={'submit'} value='Logar' onClick={async ()=>{
           event.preventDefault()
           let verifica = await logar(email, senha)

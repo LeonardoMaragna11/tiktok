@@ -5,7 +5,11 @@
   margin: 0;
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
+  color: aliceblue;
+}
 
+body, html{
+  background-color: #1d1d1d;
 }
 
 a {
@@ -23,14 +27,64 @@ form{
   padding: 10px 20px 10px 20px;
 }
 
-input[type=email], input[type=password], input[type=text]{
-  margin-bottom: 20px; 
+input[type=email], input[type=password], input[type=text], textarea, input[type=date]{
+  margin-bottom: 20px;
+  padding-left: 10px;
+  font-size: 1rem;
+  color: aliceblue;
+  background-color: #252525;
+  border: none;
+  box-shadow: 1px 1px 10px black;
 }
 
 input{
   height: 50px;
 }
 
+input:focus-visible{
+  outline: none;
+}
+
+
 input[type=submit]{
   margin-top: 30px;
+  background-color: #252525;
+  color: aliceblue;
+  transition: 0.7s;
+  font-size: 1rem;
+}
+
+input[type=submit]:hover{
+  color: #252525;
+  background-color: aliceblue;
+}
+
+input[type=file]{
+  display: none;
+}
+
+.InputImagem{
+  background-color: #1d1d1d;
+  color: aliceblue;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 50px;
+  border: none;
+  box-shadow: 1px 1px 10px black;
+}
+
+nav{
+  background-color: #0a4927;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px 0px 10px;
+  margin-bottom: 30px;
+  box-shadow: 1px 1px 10px black;
+}
+
+textarea{
+  max-width: 470px;
 }
