@@ -11,11 +11,14 @@ async function cadastrar(usuario)
 {
         let res = await supabase
         .from('Usuario')
-        .insert([usuario]) 
-        if (res.error.message == 'duplicate key value violates unique constraint "Usuario_email_us_key"'){
-            throw new erros("Esse email ja está cadastrado")
-        }else{
-            throw new erros("Erro inespeperado, entre em contato com o desesvolvido")
+        .insert([usuario])
+        
+        if(res.error){
+            if (res.error.message == 'duplicate key value violates unique constraint "Usuario_email_us_key"'){
+                throw new erros("Esse email ja está cadastrado")
+            }else{
+                throw new erros("Erro inespeperado, entre em contato com o desesvolvido")
+            }
         }
 }
 
@@ -77,8 +80,14 @@ export default function Cadastro(){
                         dataNascimento_us: data,
                         username_us: username
                     }
-                    cadastrar(usuario)
-                    uploadImg(imagem)
+
+                    try{
+                        cadastrar(usuario)
+                        uploadImg(imagem)
+                        route.push('')
+                    }catch(e){
+                        console.log(e);
+                    }
                 }}/>
 
             </form>

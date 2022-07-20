@@ -6,7 +6,7 @@ const supabaseUrl = 'https://krxexdbhkajbanxqtoeq.supabase.co'
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtyeGV4ZGJoa2FqYmFueHF0b2VxIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NTcxMjM4ODQsImV4cCI6MTk3MjY5OTg4NH0.Enk0wttjPv0tEwTiC-hJywfJ2Tsjzw4KyCbbncy3Zx8'
 const supabase = createClient(supabaseUrl, SUPABASE_KEY)
 
-async function logar(email, senha, cb){
+async function logar(email, senha){
   let { data: Usuario, error } = await supabase
   .from('Usuario')
   .select('*')
